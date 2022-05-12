@@ -1,0 +1,361 @@
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+
+<body> 
+ <nav id="navbar" >
+ 
+   <header>
+   <h3> Diferencijalne jednačine prvog reda </h3>
+   </header>
+   <ul >
+  <li><a class= "nav-link" href="#Diferencijalne_jednačine_sa_razdvojivim_promjenljivim"><h3>Diferencijalne jednačine sa razdvojivim promjenljivim</h3></a></li>
+     <li><a class= "nav-link"href="#Homogene_diferencijalne_jednačine"><h3>Homogene diferencijalne jednačine</h3></a></li>
+     <li> <a class= "nav-link" href="#Linearne_diferencijalne_jednačine"><h3>Linearne diferencijalne jednačine</h3></a></li>
+     <li> <a class= "nav-link" href="#Bernoullijeve_diferencijalne_jednačine"><h3>Bernoullijeve diferencijalne jednačine</h3></a></li>
+     <li> <a class= "nav-link" href="#Riccatijeve_diferencijalne_jednačine"><h3>Riccatijeve diferencijalne jednačine</h3></a></li>
+       
+  </nav>
+
+
+<span onclick="openNav()"></span>
+
+
+  <div>
+<main id = "main-doc">
+    <section class = "main-section" id ="Diferencijalne_jednačine_sa_razdvojivim_promjenljivim">
+      <header>
+        Diferencijalne jednačine sa razdvojivim promjenljivim
+      </header>
+    
+       <h4><b>Opšti oblik:</b> 
+         <br> $$y' = f(x)\cdot g(y)$$
+     <b>Način rješavanja:</b> 
+         $$\frac{\mathrm dy}{ \mathrm dx} =f(x) \cdot g(y) / \cdot \frac{ \mathrm dx}{g(y)}$$
+    $$\frac{ \mathrm dy}{g(y)}= f(x) \mathrm dx / \int$$
+    $$\int \frac{ \mathrm dy}{g(y)}= \int f(x) \mathrm dx + c$$</h4>
+<ol>
+  <li><b><code>Zadatak 1.</code></b> <em>Metodom razdvajanja promjenljivih riješiti diferencijalnu jednačinu:</em>
+        $$y' =\frac{1+y^2}{1+x^2}$$  </li>
+
+
+       
+  <p>$$\frac{dy}{dx}=\frac{1+y^2}{1+x^2}$$</p>
+ 
+<p> Najprije razdvajamo promjenljive, vodeći računa o tome da se dx i dy ne smiju naći ispod razlomačke crte. Dakle, promjenljive x i y  trebaju biti  sa različitih strana jednakosti, te s tim ciljem množimo prethodnu jednakost sa 
+ \[\frac{dx}{1+y^{2}}\]
+ Sljedeći korak jeste da integralimo dobijenu jednakost:
+ 
+$$\frac{dy}{1+y^2}=\frac{dx}{1+x^2}\hskip 0.3cm/ \int $$
+$$ \int\frac{dy}{1+y^2}=\int\frac{dx}{1+x^2}$$
+$$ arctg{y}=arctg{x}+C$$
+$$y=tg{(arctg{x}+C)}.$$
+Napomena:  Dovoljno je da konstantu C dodate samo jednoj strani jednakosti!</p>
+      <li><b> <code> Zadatak 2.</code> </b> <em>Metodom razdvajanja promjenljivih riješiti diferencijalnu jednačinu: </em>
+$$xy'=y\cdot(1+x\cos x)$$  </li>
+      <p> 
+$$\frac{xdy}{dx}=y\cdot(1+x\cos x)$$
+$$\frac{dy}{y}=\frac{1+x\cos x}{x}dx \hskip 0.3cm / \int$$
+$$\int\frac{dy}{y}=\int\frac{dx}{x}+\int \cos x dx$$
+$$ln y=\ln x+\sin x+C$$
+$$y=e^{\ln x+\sin x+C}$$
+$$y=x\cdot e^{\sin x}$$</p>
+ 
+  
+  
+  <li><b> <code>Zadatak 3.</code> </b> <em>Metodom razdvajanja promjenljivih riješiti diferencijalnu jednačinu: </em>
+$$y'=\sin(x-y)$$  </li>
+      <p> 
+
+Uvodimo smjenu x - y = u,  y = x  -u, y'= 1 - u':
+
+\begin{align*}
+1-u'&=\sin u\\
+u'&=1-\sin u /:(1-\sin u)\\
+ \frac{u'}{1-\sin u}&=1\\
+ \frac{du}{1-\sin u}&=dx \hskip 0.3cm / \int\\
+ \int\frac{du}{1-\sin u}&=\int dx=x+C\\
+ \int\frac{du}{1-\sin u}&=
+\left|
+\begin{array}{ccc}
+ tg\frac{u}{2}&=&t \\
+ \sin u& = & \frac{2t}{1+t^2} \\
+  du & = & \frac{2dt}{1+t^2}
+\end{array}\right |= \\
+ \int\frac{2dt}{(1-t)^2}&=\left|
+\begin{array}{ccc}
+ 1-t&=&z \\
+ dt& = & -dz \\
+\end{array}\right |=-2\int\frac{dz}{z^2}=-2 \cdot \left(-\frac{1}{z}\right)\\
+\end{align*}
+vraćanjem uvedenih smjena, dobivamo sljedeće rješenje:
+$$\displaystyle y=x-2arctg\left(1-\frac{2}{x}\right).$$</p>
+ 
+        </ol>
+       
+      
+    </section>
+   <section class = "main-section" id ="Homogene_diferencijalne_jednačine">
+      <header>
+        Homogene diferencijalne jednačine</header>
+        <h4><b>Opšti oblik:</b> 
+        <br> $$\displaystyle y'=f\left(\frac{y}{x}\right)$$
+ 
+        <b>Način rješavanja:</b> 
+        
+          <p>$$\displaystyle u=\frac{y}{x},$$</p>
+
+
+$$y=ux $$
+$$y'=u+xu'$$
+
+</h4>
+<ol>
+      <li><b><code>Zadatak 1.</code> </b> <em>Riješiti diferencijalnu jednačinu: </em>
+$$x+y+(y-x)y'=0$$   </li>
+
+
+  <p>     
+$$x+y+(y-x)y'=0$$
+$$(y-x)y'=-(x+y)$$
+$$ y'=\frac{x+y}{x-y}$$
+$$ y'=\frac{x\left(1+\frac{y}{x}\right)}{x\left(1-\frac{y}{x}\right)}$$
+$$y'=\frac{1+\frac{y}{x}}{1-\frac{y}{x}}$$
+ 
+ Uvodimo već spomenutu smjenu, i imamo: 
+ 
+  $$\displaystyle u=\frac{y}{x},$$
+ odnosno: 
+$$y=xu$$ 
+$$y'=u+xu',$$
+ pa ćemo imati:
+
+$$u'x+u=\frac{1+u}{1-u}$$
+ $$u'x=\frac{1+u}{1-u}-u=\frac{1+u^2}{1-u}$$
+$$ \frac{du}{dx}x=\frac{1+u^2}{1-u}$$
+ $$\frac{(1-u)du}{1+u^2}=\frac{dx}{x}\hskip 0.3cm /\int$$
+ $$\int\frac{du}{1+u^2}-\int\frac{udu}{1+u^2}=\int\frac{dx}{x}$$
+
+Nakon rješavanja integrala dobijamo:
+
+$$arctg{u}-\frac{1}{2}\ln (1+u^2)=\ln x+C,$$ odnosno,
+$$arctg{\frac{y}{x}} -\frac{1}{2}\ln \left(1+\frac{y^2}{x^2}\right)=\ln x+C. $$ </p>
+  <li><b><code>Zadatak 2.</code> </b><em>Odrediti rješenje diferencijalne jednačine: 
+ </em> 
+ $$x^2+y^2-2xyy'=0$$ </li>
+  <p>
+  $$x^2+y^2-2xyy'=0$$
+$$2xyy'=x^2+y^2$$
+ $$y'=\frac{x^2+y^2}{2xy}$$
+ $$y'=\frac{1}{2}\left(\frac{x}{y}+\frac{y}{x}\right),$$
+
+Uvodimo smjenu, i imamo: 
+$$\displaystyle u=\frac{y}{x},$$
+ odnosno: 
+$$y=xy$$ 
+$$y'=u+xu',$$
+ pa će vrijediti da je jednačina:
+
+$$ u'x+u=\frac{1}{2}\left(\frac{1}{u}+u\right),$$ odnosno,
+ $$u'x=\frac{1-u^2}{2u}$$
+$$ \frac{2u\cdot u'}{1-u^2}=\frac{1}{x}$$
+ $$\frac{2udu}{1-u^2}=\frac{dx}{x} \hskip 0.2cm/ \int$$
+ $$\int\frac{2udu}{1-u^2}=\int\frac{dx}{x}$$
+$$-\ln t=\ln x+ \ln C \Rightarrow \ln t^{-1}=\ln (Cx)$$
+ $$\frac{1}{1-u^2}=Cx$$
+$$ \frac{x^2}{x^2-y^2}=Cx $$ 
+$$ \Rightarrow y=\pm \sqrt{x-\frac{1}{C}}.$$</p>
+   <li><b><code>Zadatak 3.</code> </b><em>Naći rješenje diferencijalne jednačine: 
+ </em> 
+ $$xy'=y\ln \frac{y}{x}$$</li
+     <p> 
+     $$xy'=y\ln \frac{y}{x}$$
+$$ y'=\frac{y}{x}\ln \frac{y}{x}$$
+
+a onda uvodeći smjenu, dobijamo:
+
+ $$u'x+u=u \ln u$$
+ $$u'x=u(\ln u-1)$$
+ $$\frac{du}{u(\ln u-1)}=\frac{dx}{x}/ \int$$
+ $$\int\frac{du}{u(\ln u-1)}=\frac{dx}{x},\hskip 0.2cm$$ $$\left[\ln u-1=t\rightarrow \frac{1}{u}du=dt\right]$$
+ $$\int\frac{dt}{t}=\int\frac{dx}{x}$$
+
+
+ $$\ln t=\ln x+\ln C$$
+$$ t=Cx\rightarrow \ln u-1=Cx$$
+ $$\ln u=Cx+1$$
+$$ u=e^{Cx+1}$$
+$$ \frac{y}{x}=e^{Cx+1}$$
+ $$y=xe^{Cx+1}.$$ </p>
+
+
+        </ol>
+      <section class = "main-section" id ="Linearne_diferencijalne_jednačine">
+     
+        <header>Linearne diferencijalne jednačine</header>
+        <h4><b>Opšti oblik:</b> 
+        <br> \begin{eqnarray}
+   y' + f(x)y = g(x)
+  \end{eqnarray}
+ 
+        <b>Način rješavanja:</b> 
+        
+
+<p>$$y(x)= e^{-\int f(x)dx} \cdot \left(\int e^{\int f(x)dx}\cdot g(x)dx + c \right).$$ <p>
+
+</h4>
+<ol>
+      <li><b><code>Zadatak 1.</code> </b> <em>Riješiti diferencijalnu jednačinu: </em>
+$$y' + y + x = 0$$  </li>
+  <p>Kao što je navedeno, opšte rješenje tražimo na sljedeći način: $$y(x)= e^{-\int f(x)dx} \cdot \left(\int e^{\int f(x)dx}\cdot g(x)dx + c \right).$$
+Dakle, u ovom slučaju vrijedi: $$y' + y = -x, $$  $$f(x) = 1$$  $$g(x) = -x$$. Prema tome, imamo:
+$$y(x)= e^{-\int dx} \cdot \left(\int e^{\int dx}\cdot (-x)dx + c \right)$$
+$$y(x)= e^{-x} \cdot \left(\int e^{x}\cdot (-x)dx + c \right)$$
+Prvo riješimo integral u zagradi koristeći metodu parcijalne integracije, odnosno:
+$$\int e^{x}\cdot (-x)dx$$. Dakle, $$ u = -x, du = -dx$$  $$dv= e^x, v = e^x.$$ Sada je:
+$$\int e^{x}\cdot (-x)dx = -x e^x + \int e^x dx = -xe^x + e^x = e^x(1 - x) .$$ Pa je opšte rješenje polazne diferencijalne jednačine:
+$$y(x) = e^-x(e^x(1 - x) + c).$$ </p>
+  <li><b><code>Zadatak 2.</code> </b> <em>Riješiti diferencijalnu jednačinu: </em>
+$$y' - \frac{2}{x+1}y = (x+1)^3$$  </li>
+  <p> Ovdje nam je: $$f(x) = - \frac{2}{x+1}$$  $$g(x) = (x+1)^3 $$
+ Prema tome, opšte rješenje je:
+   $$y(x)= e^{-\int- \frac{2}{x+1} dx} \cdot \left(\int e^{\int - \frac{2}{x+1}dx}\cdot (x+1)^3dx + c \right).$$
+    $$y(x)= e^{2 \ln |x + 1|} \cdot \left(\int e^{-2 \ln |x + 1|}\cdot (x+1)^3dx + c \right).$$
+    $$y(x)= e^{\ln (x + 1)^2} \cdot \left(\int e^{ \ln (x + 1)^{-2}}\cdot (x+1)^3dx + c \right).$$
+     $$y(x)= (x + 1)^2 \cdot \left(\int  \frac{1}{(x + 1)^2 }\cdot (x+1)^3dx + c \right).$$
+     $$y(x)= (x + 1)^2 \cdot \left(\frac{x^2}{2}+ x + c \right).$$ </p>
+   <li><b><code>Zadatak 3.</code> </b> <em>Riješiti diferencijalnu jednačinu: </em>
+$$y'-y=e^x$$  </li>
+  <p>Ovdje nam je: $$f(x) = - 1$$  $$g(x) = e^x .$$
+ Prema tome, opšte rješenje je:
+  $$y(x)= e^{-\int-1 dx} \cdot \left(\int e^{\int - 1dx}\cdot e^xdx + c \right)$$
+    $$y(x)= e^x \cdot \left(\int dx + c \right).$$
+    $$y(x)= e^x \cdot \left(x + c \right).$$
+     </p>
+     </ol>
+         <section class = "main-section" id ="Bernoullijeve_diferencijalne_jednačine">
+      
+        <header>Bernoullijeve diferencijalne jednačine</header>
+        <h4><b>Opšti oblik:</b> 
+        <br>  \begin{equation}
+y' + f(x)y = g(x) \cdot y^ \alpha /  : y^ \alpha
+\end{equation}
+ 
+        <b>Način rješavanja:</b> 
+        
+
+<p>  $$\frac{y'}{y^ \alpha} + f(x)\frac{y}{y^ \alpha} = g(x)$$
+$$\frac{y'}{y^ \alpha} + f(x)y^{1 - \alpha} = g(x)$$  Uvodimo smjenu: $$y^{1 - \alpha} = z, $$ $$z' = (1- \alpha)\cdot \frac{y'}{y^ \alpha} $$  $$ \frac{y'}{y^ \alpha} = \frac{z'}{1 - \alpha}, $$  
+$$\Leftrightarrow \frac{z'}{1 - \alpha} + f(x)z = g(x) / \cdot (1 - \alpha)$$
+$$z' + (1 - \alpha) f(x)z = (1 - \alpha) g(x) $$
+Na ovaj način smo sveli polaznu diferencijalnu jednačinu na linearnu!</p>
+
+</h4>
+<ol>
+      <li><b><code>Zadatak 1.</code> </b> <em> Naći rješenje diferencijalne jednačine:
+  </em>   $$y' + 2xy = 2x^{3}y^{3}$$ 
+   </li>
+  <p> Ovo je Bernoullijeva diferencijalna jednačina zadata u njenom standardnom obliku, kod koje je: $$\alpha = 3.$$.
+     $$y' + 2xy = 2x^{3}y^{3} / : y^3$$ 
+    $$\frac{y'}{y^3} + 2x \cdot \frac{1}{y^2} = 2x^3$$
+    Uvodimo smjenu: $$y^{-2} = z.$$ Kako je y zavisna promjenljiva, prilikom određivanja izvoda dobijamo:
+    $$-2 y^{-3}y' = z', $$ $$\frac{y'}{y^3} = \frac{z'}{-2}$$ 
+    Uvrštavajući to u polaznu diferencijalnu jednačinu, dobićemo linearnu diferencijalnu jednačinu:
+      $$\frac{z'}{-2} + 2xz = 2x^3 / \cdot (-2)$$
+    $$z' - 4xz = -4x^3.$$
+    S obzirom da je kod ove LDJ $$f(x)= -4x$$ i $$g(x) = -4x^3,$$ to je opšte rješenje:
+    $$z(x) = e^{\int4x dx} \cdot \left(\int e^{-\int 4x dx}\cdot (-4x)^3dx + c \right)$$
+    $$z(x) = e^{2x^2} \cdot \left(-4\int e^{-2x^2}\cdot x^3dx + c \right)$$
+    $$z(x) = e^{2x^{2}} \left(x^{2}e^{-2x^{2}} + \frac{1}{2}e^{-2x^{2}} + c \right)$$
+    
+$$z(x) = x^{2} + \frac{1}{2} + Ce^{2x^{2}}$$
+Vratimo smjenu, pa imamo:
+$$y= \pm \frac{1}{\sqrt{x^{2} + \frac{1}{2} + Ce^{2x^{2}}}}.$$ </p>
+   <li><b><code>Zadatak 2.</code> </b> <em> Riješiti diferencijalnu jednačinu:
+  </em>  $$xy'+y=y^2\ln x$$
+  </li>
+  <p> Ova jednačina postaje Bernulijeva jednačina nakon dijeljenja sa x, sljedećeg oblika:
+$$\displaystyle y'+\frac{1}{x}=\frac{y^2\ln x}{x} / y^{2}$$
+ 
+$$\displaystyle \frac{y'}{y^2}+\frac{1}{x}\cdot \frac{1}{y}=\frac{\ln x}{x}$$
+Uvodimo smjenu: $$\displaystyle y^{-1}=z,$$ $$\displaystyle y=\frac{1}{z} \rightarrow y'=\frac{z'}{z^2}$$
+$$\displaystyle -\frac{z'}{z^2}+\frac{1}{x}\frac{1}{z}=\frac{1}{z^2}\frac{\ln x}{x} \hskip 0.2cm /\cdot (-z^2)$$
+$$\displaystyle z'-\frac{1}{x}z=-\frac{\ln x}{x}$$
+Ovo je sada linearna diferencijalna jednačina, gdje je: $$f(x)= -\frac{1}{x}$$  $$g(x) = -\frac{\ln x}{x},$$ to je opšte rješenje:
+    $$\displaystyle z = e^{-\int-\frac{1}{x} dx} \cdot \left(c-\int e^{-\int \frac{1}{x} dx}\cdot \frac{\ln x}{x} \right)$$
+    $$\displaystyle z = e^{\ln x}\left(c-\int\frac{\ln x}{x^2}dx\right)$$
+    $$\displaystyle z=x\cdot \left(c+\frac{\ln x +
+    1}{x}\right)=cx+\ln x+1$$
+Nakon što vratimo smjenu, imamo rješenje polazne jednačine:
+    $$\displaystyle y=\frac{1}{cx+\ln x+1}.$$</p>
+        </ol>
+         <section class = "main-section" id ="Riccatijeve_diferencijalne_jednačine">
+      
+        <header>Riccatijeve diferencijalne jednačine</header>
+        <h4><b>Opšti oblik:</b> 
+        <br>  $$y'+P(x)y=Q(x)+R(x)y^2$$  
+ 
+        <b>Način rješavanja:</b> 
+        
+
+<p> Rješenje jednačine se dobije smjenom $$\displaystyle y=y_1+\frac{1}{z},$$ gdje je y1 jedno partikularno rješenje jednačine, a z=z(x) je nova nepoznata funkcija.<p>
+
+</h4>
+<ol>
+  <li><b><code>Zadatak 1.</code> </b> <em> Data je diferencijalna jednačina:</em>
+ $$y'=-y^2+2xy-x^2+5$$
+ <em>Pokazati da je jedno partikularno rješenje date jednačine linearna funkcija</em> $$y=a+bx, a>0,b>0$$
+    <em>Potom naći njeno opšte rješenje.</em>
+
+  
+   </li>
+  <p>$$y=a+bx \Rightarrow y'=b$$ uvrstimo u datu jednačinu:
+$$\begin{array}{rcl}
+  b & = & -(a^2+2abx+b^2x^2)+2x(a+bx)-x^2+5 \\
+  b & = & -a^2-2abx-b^2x^2+2ax +2bx-x^2+5\\
+  b & = & -(b-1)^2x^2+2a(1-b)x+5-a^2
+\end{array}$$
+Odakle slijedi:
+\begin{align*}
+(b-1)^2&=0 \Rightarrow b-1=0 \Rightarrow b=1,\\
+2a(1-b)&=0 \Rightarrow a=0,\\
+5-a^2&=1 \Rightarrow a^2=4 \Rightarrow a=\pm 2 \Rightarrow a=2.\\
+\end{align*}
+Pa je jedno partikularno rješenje u obliku: $$y=2+x,$$ a opšte rješenje jednačine je: $$\displaystyle y=2+x+\frac{1}{z}.$$
+Odnosno: $$\displaystyle y'=1-\frac{z'}{z^2}$$  što uvrštavamo u polaznu jednačinu:
+$$\displaystyle 1-\frac{z'}{z^2}=-\left(2+x+\frac{1}{z}\right)^2+2x\cdot \left(2+x+\frac{1}{z}\right)-x^2+5/ \cdot z^2$$
+ $$z'=4z+1$$. Ovo je sada jednačina s razdvojenim promjenljivim, čije je rješenje:
+\begin{align*}
+ \frac{dz}{dx}=4z+1\\
+\frac{dz}{4z+1}=dx /\int\\
+\int \frac{dz}{4z+1}=\int dx\\
+ \frac{1}{4}\ln (4z+1)=x+c, \text{odnosno:}\\
+z=\frac{1}{4}e^{4(x+c)}-1, \\
+\end{align*}
+Rješenje jednačine je: $$\displaystyle y=2+x+\frac{4}{e^{4(x+c)}-1}.$$ </p>
+  <li><b><code>Zadatak 2. </code></b> <em> Naći opšte rješenje DJ </em>
+$$\displaystyle y'=\frac{1}{1-x^3}y^2-\frac{x^2}{1-x^3}y-\frac{2x}{1-x^3}$$
+<em>ako je</em> $$y_1=ax^2$$ <em>jedno njeno partikularno rješenje i a konstanta koju treba odrediti.</em>
+  </li>
+ <p>  $$y_1=ax^2 \Rightarrow y'_1=2ax,$$ 
+   što zamjenom u datu DJ daje:
+$$\displaystyle 2ax=\frac{1}{1-x^3}a^2x^4-\frac{x^2}{1-x^3}ax^2-\frac{2x}{1-x^3}$$
+i sređivanjem: 
+$$\displaystyle 2(a+1)x-a(a+1)x^4=0.$$
+Posljednja jednakost važi za svako x ako je $$a+1=0.$$  Zato je partikularno rješenje: $$y_1=-x^2.$$
+Data DJ je Riccatijeva sa:
+$$\displaystyle P(x)=\frac{1}{1-x^3}, \hskip 0.2cm Q(x)=-\frac{x^2}{1-x^3}, \hskip 0.2cm R(x)=-\frac{2x}{1-x^3}$$
+Uvodimo smjenu 
+$$\displaystyle y=y_1+\frac{1}{z}=-x^2+\frac{1}{z}$$
+poslije koje se DJ transformiše u linearnu diferencijalnu jednačinu:
+$$\displaystyle z'-\frac{3x^2}{1-x^3}z=-\frac{1}{1-x^3}$$
+Rješenje ove linearne diferencijalne jednačine je
+$$\displaystyle z=\frac{c-x}{1-x^3},$$
+odnosno:
+$$y=y_1+\frac{1}{z}=-x^2+\frac{1-x^3}{c-x}=\frac{1-cx^2}{c-x},$$
+gdje je c proizvoljna konstanta.</p>
+        </ol>
+  </main>
+
+</div>
+  
+</body>
